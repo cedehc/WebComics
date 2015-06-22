@@ -5,8 +5,6 @@ import java.util.regex.Pattern;
 import net.bytten.comicviewer.IComicDefinition;
 import net.bytten.comicviewer.IComicProvider;
 
-import net.bytten.xkcdviewer.XkcdComicProvider;
-
 import android.net.Uri;
 
 public class DucaWillComicDefinition implements IComicDefinition {

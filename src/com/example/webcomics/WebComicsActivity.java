@@ -22,12 +22,12 @@
  */
 package com.example.webcomics;
 
+import android.content.Context;
+
 import net.bytten.comicviewer.ArchiveActivity;
 import net.bytten.comicviewer.ComicViewerActivity;
 import net.bytten.comicviewer.IComicDefinition;
-
-import net.bytten.xkcdviewer.XkcdArchiveActivity;
-import net.bytten.xkcdviewer.XkcdComicDefinition;
+import net.bytten.comicviewer.ComicListAdapter;
 
 public class WebComicsActivity extends ComicViewerActivity {
 
@@ -38,7 +38,7 @@ public class WebComicsActivity extends ComicViewerActivity {
 
     @Override
     protected Class<? extends ArchiveActivity> getArchiveActivityClass() {
-        return XkcdArchiveActivity.class;
+        return null;
     }
 
     @Override
@@ -51,4 +51,8 @@ public class WebComicsActivity extends ComicViewerActivity {
         return getResources().getString(R.string.app_name);
     }
 
+    @Override
+    protected ComicListAdapter getComicListAdapter(Context context) {
+        return new Comics(context);
+    }
 }
