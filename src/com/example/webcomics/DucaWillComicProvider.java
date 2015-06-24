@@ -54,7 +54,7 @@ public class DucaWillComicProvider implements IComicProvider {
         DucaWillComicInfo data = new DucaWillComicInfo();
         data.img = Uri.parse(obj.getString("comic"));
         //byte [] encodedAlt = obj.getString("alt").getBytes("ISO-8859-1");
-        data.alt = new String("teste");
+        //data.alt = new String("teste");
         data.num = 1337;
         data.title = obj.getString("title");
         if (obj.has("source") && obj.getString("source").length() > 0) {

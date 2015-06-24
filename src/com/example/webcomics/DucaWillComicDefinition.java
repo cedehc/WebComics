@@ -60,7 +60,7 @@ public class DucaWillComicDefinition implements IComicDefinition {
 
     @Override
     public boolean hasAltText() {
-        return true;
+        return false;
     }
 
     @Override
