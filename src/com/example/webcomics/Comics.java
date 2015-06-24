@@ -10,8 +10,8 @@ import net.bytten.comicviewer.ComicListAdapter;
 public class Comics extends ComicListAdapter {
 
     private String[] mComics = new String[] {
-        "xkcd",
         "WillTirando",
+        "xkcd",
         "AbstruseGoose",
     };
 

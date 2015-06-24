@@ -29,11 +29,23 @@ import net.bytten.comicviewer.ComicViewerActivity;
 import net.bytten.comicviewer.IComicDefinition;
 import net.bytten.comicviewer.ComicListAdapter;
 
+import net.bytten.xkcdviewer.XkcdComicDefinition;
+
 public class WebComicsActivity extends ComicViewerActivity {
+
+    private Comics mComics;
+    private IComicDefinition mCurrComicDef;
+    private IComicDefinition[] mComicDefs = new IComicDefinition[] {
+         new DucaWillComicDefinition(),
+         new XkcdComicDefinition()
+    };
 
     @Override
     protected IComicDefinition makeComicDef() {
-        return new DucaWillComicDefinition();
+        if (mCurrComicDef == null) {
+            mCurrComicDef = mComicDefs[0];
+        }
+        return mCurrComicDef;
     }
 
     @Override
@@ -53,6 +65,17 @@ public class WebComicsActivity extends ComicViewerActivity {
 
     @Override
     protected ComicListAdapter getComicListAdapter(Context context) {
-        return new Comics(context);
+        if (mComics == null) {
+            mComics = new Comics(context);
+        }
+        return mComics;
+    }
+
+    @Override
+    protected void changeComicSel(int position) {
+        if (mCurrComicDef != mComicDefs[position]) {
+            mCurrComicDef = mComicDefs[position];
+            updateComic();
+        }
     }
 }
