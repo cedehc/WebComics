@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import android.net.Uri;
 
-public class DucaWillComicDefinition extends DucaComicDefinition {
+public class DucaExplosmComicDefinition extends DucaComicDefinition {
 
     private Pattern comicUrlPattern;
 
@@ -14,13 +14,13 @@ public class DucaWillComicDefinition extends DucaComicDefinition {
     private Pattern archiveUrlPattern = Pattern.compile(
             "http://(www\\.)?xkcd\\.com/archive(/)?");
 
-    public DucaWillComicDefinition() {
+    public DucaExplosmComicDefinition() {
         super();
     }
 
     @Override
     public DucaComicProvider newProviderInstance() {
-        return new DucaWillComicProvider(this);
+        return new DucaExplosmComicProvider(this);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class DucaWillComicDefinition extends DucaComicDefinition {
 
     @Override
     public String getAuthorLinkText() {
-        return "Will Tirando";
+        return "Explosm";
     }
 
     @Override
@@ -49,18 +49,17 @@ public class DucaWillComicDefinition extends DucaComicDefinition {
 
     @Override
     public String getAuthorName() {
-        return "Will autor";
+        return "Cyanide & Happiness";
     }
 
     @Override
     public String getComicTitle() {
-        return "Will Tirando";
+        return "Explosm";
     }
 
     @Override
     public String getComicTitleAbbrev() {
-        /* TODO only testing, remove later */
-        return "willtirandoabbrev";
+        return "explosmabbrev";
     }
 
     @Override

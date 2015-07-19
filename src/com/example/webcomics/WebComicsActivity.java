@@ -37,6 +37,7 @@ public class WebComicsActivity extends ComicViewerActivity {
     private IComicDefinition mCurrComicDef;
     private IComicDefinition[] mComicDefs = new IComicDefinition[] {
          new DucaWillComicDefinition(),
+         new DucaExplosmComicDefinition(),
          new XkcdComicDefinition()
     };
 

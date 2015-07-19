@@ -11,8 +11,8 @@ public class Comics extends ComicListAdapter {
 
     private String[] mComics = new String[] {
         "WillTirando",
+        "Explosm",
         "xkcd",
-        "AbstruseGoose",
     };
 
     private Context mContext;

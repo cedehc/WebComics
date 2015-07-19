@@ -9,22 +9,22 @@ import net.bytten.comicviewer.IComicInfo;
 
 import android.net.Uri;
 
-public class DucaWillComicProvider extends DucaComicProvider {
+public class DucaExplosmComicProvider extends DucaComicProvider {
 
     private static final Pattern archiveItemPattern = Pattern.compile(
             // group(1): comic number;   group(2): date;   group(3): title
             "\\s*<a href=\"/(\\d+)/\" title=\"(\\d+-\\d+-\\d+)\">([^<]+)</a><br/>\\s*");
     private static final String ARCHIVE_URL = "http://www.xkcd.com/archive/";
 
-    private DucaWillComicDefinition def;
+    private DucaExplosmComicDefinition def;
 
-    public DucaWillComicProvider(DucaWillComicDefinition def) {
+    public DucaExplosmComicProvider(DucaExplosmComicDefinition def) {
         super(def);
     }
 
     @Override
     public String getComicShortName() {
-        return "willtirando";
+        return "explosm";
     }
 
     @Override

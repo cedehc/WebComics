@@ -3,7 +3,15 @@ package com.example.webcomics;
 import net.bytten.comicviewer.IComicInfo;
 import android.net.Uri;
 
-public class DucaWillComicInfo implements IComicInfo {
+public class DucaComicInfo implements IComicInfo {
+
+    protected static final String baseURL = "http://duca-pauloalexandre.rhcloud.com/api/v1/";
+
+    private String comicShortName = null;
+
+    public DucaComicInfo(String comicShortName) {
+        this.comicShortName = comicShortName;
+    }
 
     public Uri img, link;
     public int num;
@@ -28,16 +36,12 @@ public class DucaWillComicInfo implements IComicInfo {
     @Override
     public String getNextId() {
         int n = num + 1;
-        // #404 is xkcd's error page!
-        if (n == 404) ++n;
         return Integer.toString(n);
     }
 
     @Override
     public String getPrevId() {
         int n = num - 1;
-        // #404 is xkcd's error page!
-        if (n == 404) --n;
         return Integer.toString(n);
     }
 
@@ -48,8 +52,7 @@ public class DucaWillComicInfo implements IComicInfo {
 
     @Override
     public String getUrl() {
-        //return "http://xkcd.com/"+getId()+"/";
-        return "http://duca-pauloalexandre.rhcloud.com/api/v1/willtirando/";
+        return baseURL + comicShortName + "/";
     }
 
     @Override
